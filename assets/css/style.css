@@ -30,7 +30,7 @@ main{
 }
 img.me{
 	border-radius: 4px;
-	animation: zoom 1s linear ;
+	/*animation: zoom 1s linear;*/
 }
 h1.heading{
 	font-size: 3rem;
