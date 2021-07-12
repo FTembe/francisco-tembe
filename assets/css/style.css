@@ -5,6 +5,7 @@
 	box-sizing: border-box;
 	overflow: hidden;
 	text-decoration: none;
+	color: #454851;
 }
 body{
    font-family: Roboto Mono, monospace;
@@ -27,12 +28,16 @@ main{
 	flex-direction: column;
 	margin-left: 2rem; 
 }
+img.me{
+	border-radius: 4px;
+	animation: zoom 1s linear ;
+}
 h1.heading{
 	font-size: 3rem;
 	color: #aaa;
 	font-weight: 900;
-
 }
+
 h1.heading strong{
 	color: #454851;
 }
@@ -57,7 +62,26 @@ p.bio{
 .social-media ul li a span{
 	margin-left:12px; 
 }
+.social-media ul li a span:hover{
+	opacity: 0.8;
+}
 
+@keyframes opacitChange{
+	from{
+		opacity: 0.2;
+	}
+	to{
+		opacity: 1;
+	}
+}
+@keyframes zoom{
+	from{
+		transform: scale(.8);
+	}
+		to{
+		transform: scale(1);
+	}
+}
 
 @media only screen and (max-width: 766px) {
 	body{
