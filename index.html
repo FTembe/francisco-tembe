@@ -1,11 +1,11 @@
-
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./assets/css/style.css">
-    
+
     <!-- Primary Meta Tags -->
     <title>Francisco Tembe — front-back & front-end developer </title>
     <meta name="title" content="Francisco Tembe - front-back & front-end ">
@@ -25,58 +25,398 @@
     <meta property="twitter:description" content="">
     <meta property="twitter:image" content="">
     <!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-GZLTCVD56J"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-GZLTCVD56J"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
 
-  gtag('config', 'G-GZLTCVD56J');
-</script>
+        gtag('config', 'G-GZLTCVD56J');
+    </script>
 </head>
-<body>
-    <div class="container">
-        <img
-            class="me"
-            src="./assets/me.png"
-            alt="Francisco Tembe  - front-back & front-end developer "
-        >
-        <main>
-            <div class="upper-content">
-                <h1 class="heading">
-                   < Francisco  <strong>Tembe</strong> />
-                </h1>
-    
-                <p class="bio">
-                    Software Developer na 
-                        <span>
-                            <a href="http://www.upgconsultorias.com/" target="_blank">Upgrade Consultorias</a>
-                        </span>
-                    e
-                        <strike>Full-stack Developer em <a href="" target="_blank">casa</a></strike>.
-                </p>
-            </div>
-            <div class="social-media">
-                <ul >
-                    <li>
-                        <a href="https://www.linkedin.com/in/francisco-tembe-20875a115/" target="_blank">
-                            <img src="./assets/icons/linkedin.svg" alt="ícone linkedin">
-                            <span> perfil no linkedin</span>
-                        </a>
 
-                    </li>
-                   <!-- <li>
-                        <a href="https://www.facebook.com/francisco.j.tembe/" target="_blank">
-                            <img src="./assets/icons/facebook.svg" alt="ícone facebook">
-                            <span>perfil no facebook</span>
-                        </a>
-                    </li>-->
-                </ul>
-                <p class="where-am-i">
-                    
-                </p>
+<style>
+    section {
+        width: 100%;
+        min-height: 100vh;
+
+    }
+
+    .burger {
+        margin-left: 1rem;
+        margin-top: 1rem;
+        height: 42px;
+        width: 42px;
+        border-radius: 50%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        border: none;
+        background-color: #fff;
+        ;
+    }
+    .burger:hover{
+        background-color: #fff;
+    }
+
+    .line {
+        width: 60%;
+        background-color: rgb(56, 59, 66);
+        height: 3px;
+    }
+
+    .dropdown {
+        position: fixed;
+        left: -800000px;
+        z-index: 333;
+        width: 49%;
+     
+        background-color: rgb(56, 59, 66);
+        padding: 2em;
+        transition: all 9ms ease-in;
+    }
+.dropdown>div{
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+    .dropdown.active {
+
+        left: 0;
+    }
+
+    .dropdown-header {
+        display: flex;
+        justify-content: space-evenly;
+       
+        border-bottom: solid 2px #fff;
+    }
+
+    .text-white {
+        color: #fff;
+    }
+    .menu-me{
+        display: flex;
+        justify-content: space-between;
+        align-items: center; 
+       
+    }
+
+    .menu-me-box-img {
+        width: 50px;
+        height: 50px;
+        background-color: #fff;
+        border-radius: 50%;
+        display: flex;
+        align-items:center;
+        justify-content: center;
+    }
+    @media only screen and (max-width: 766px) {
+
+        .dropdown {
+            width: 80%;
+            background-color: rgba(56, 59, 66, .9);
+        }
+        .menu-me{
+
+            flex-direction: column;
+           
+        }  
+    }
+</style>
+
+<body>
+    <div style="position: relative;">
+        <a href="javascript:void" onclick="show()" style="position: fixed;">
+            <!-- <i style="color: #ffff;" class="fi fi-br-menu-burger"></i> -->
+            <div class="burger">
+                <div class="line"></div>
+                <div class="line " style="margin: .3rem 0;"></div>
+                <div class="line"></div>
             </div>
-        </main>
+        </a>
+        <div class="dropdown ">
+            <div>
+                <div class="dropdown-header">
+                    <div class="menu-me">
+                        <div class="menu-me-box-img">
+                            <img src="./assets/me.png"  alt="">
+                        </div>
+                        <h2 class="text-white"> &nbsp;Francisco Tembe</h2>
+                    </div>
+                    <a href="javascript:void" onclick="hide()" style="color: #fff; font-size:2rem">&times;</a>
+                </div>
+                <ul>
+                    <li><a href="#home">Pagina inicial</a></li>
+                    <li><a href="#own">Projecto pessoas</a></li>
+                    <li><a href="#upgrade">Projecto na Upgrade</a></li>
+                    <li><a href="#skils">Habilidades </a></li>
+                    <li><a href="#blog">Blog - Informativo</a></li>
+                </ul>
+                <div>
+                </div>
+            </div>
+        </div>
     </div>
+    <section id="home">
+        <div class="container">
+            <img class="me" src="./assets/me.png" alt="Francisco Tembe  - front-back & front-end developer ">
+            <main>
+                <div class="upper-content">
+                    <h1 class="heading">
+                        < Francisco <strong>Tembe</strong> />
+                    </h1>
+
+                    <p class="bio">
+                        Software Developer
+                        <span>
+                            focado e apaixonado pela criação de soluções inovadoras
+                        </span>
+                    </p>
+                </div>
+                <div class="social-media">
+                    <ul>
+                        <li>
+                            <a href="https://github.com/FTembe" target="_blank">
+                                <img src="./assets/icons/github.png" width="22px" alt="ícone github">
+                                <span>perfil Github</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.youtube.com/channel/UC6TAPFKwqq_RYTm-cjb651A" target="_blank">
+                                <img src="./assets/icons/youtube.png" width="22px" alt="ícone youtube">
+                                <span>Canal Youtube</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.linkedin.com/in/francisco-tembe-20875a115/" target="_blank">
+                                <img src="./assets/icons/linkedin.svg" alt="ícone linkedin">
+                                <span>perfil Linkedin</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.facebook.com/francisco.j.tembe/" target="_blank">
+                                <img src="./assets/icons/facebook.svg" alt="ícone facebook">
+                                <span>perfil no facebook</span>
+                            </a>
+                        </li>
+                    </ul>
+                    <p class="where-am-i">
+
+                    </p>
+                </div>
+            </main>
+        </div>
+    </section>
+    <section id="own">
+        <div class="container">
+            <img class="me" src="./assets/me.png" alt="Francisco Tembe  - front-back & front-end developer ">
+            <main>
+                <div class="upper-content">
+                    <h1 class="heading">
+                        < Projetos <strong>pessoais</strong> />
+                    </h1>
+
+                    <p class="bio">
+                        Explore minha jornada criativa e projetos pessoais
+                    </p>
+                </div>
+                <div class="social-media">
+                    <ul>
+                        <li>
+                            <a href="https://www.linkedin.com/in/francisco-tembe-20875a115/" target="_blank">
+                                <img src="./assets/icons/web.png" width="22px" alt="Kitara space"> &nbsp;
+                                <strong>Kitara</strong> - <span> Conectando-o ao mundo digital.</span>
+                            </a>
+
+                        </li>
+                        <li>
+                            <a href="https://fin.kitara.space" target="_blank">
+                                <img src="./assets/icons/web.png" width="22px" alt="  Finanças pessoais"> &nbsp;
+                                <strong>fin</strong> <span> - Finanças pessoais.</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://kitgest.kitara.space/" target="_blank">
+                                <img src="./assets/icons/web.png" width="22px" alt="Software de gestão"> &nbsp;
+                                <strong>kitgest</strong> <span> - Software de gestão.</span>
+                            </a>
+                        </li>
+                        <!-- <li>
+                                <a href="https://www.facebook.com/francisco.j.tembe/" target="_blank">
+                                    <img src="./assets/icons/facebook.svg" alt="ícone facebook">
+                                    <span>perfil no facebook</span>
+                                </a>
+                            </li>-->
+                    </ul>
+                    <p class="where-am-i">
+
+                    </p>
+                </div>
+            </main>
+        </div>
+    </section>
+    <section id="upgrade">
+        <div class="container">
+            <img class="me" src="./assets/me.png" alt="Francisco Tembe  - front-back & front-end developer ">
+            <main>
+                <div class="upper-content">
+                    <h1 class="heading">
+                        < Projetos <strong><a href="https://upg.co.mz/" target="_blank"
+                                rel="noopener noreferrer">upgrade</a></strong> />
+                    </h1>
+
+                    <p class="bio">
+                        Explore minhas contribuições em projetos profissionais
+                    </p>
+                </div>
+                <div class="social-media">
+                    <ul>
+                        <li>
+                            <a href="https://upg.co.mz/services/upgsoft" target="_blank">
+                                <img src="./assets/icons/web.png" width="22px" alt="Kitara space"> &nbsp;
+                                <strong>Upgsoft</strong> <span> - Plataforma modular</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://amog.org.mz/" target="_blank">
+                                <img src="./assets/icons/web.png" width="22px" alt="Kitara space"> &nbsp;
+                                <strong>Amog</strong> <span> - Associação Moçambicana de Obstetras e Ginecologistas
+                                </span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://cbe.co.mz/" target="_blank">
+                                <img src="./assets/icons/web.png" width="22px" alt="  Finanças pessoais"> &nbsp;
+                                <strong>Cbe Southern Africa</strong> <span> - Recrutamento e Seleção </span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.cismcandidaturas.org/" target="_blank">
+                                <img src="./assets/icons/web.png" width="22px" alt="Software de gestão"> &nbsp;
+                                <strong>CISM candidaturas</strong> <span> - Centro de Investigação em Saúde de
+                                    Manhiça </span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://sodel.co.mz/" target="_blank">
+                                <img src="./assets/icons/web.png" width="22px" alt="Software de gestão"> &nbsp;
+                                <strong>Sodel</strong> <span> -Sociedade de Despachos </span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://rovumainsurance.co.mz/" target="_blank">
+                                <img src="./assets/icons/web.png" width="22px" alt="Software de gestão"> &nbsp;
+                                <strong>Rovuma Insurance</strong> <span> - Gestão de seguros</span>
+                            </a>
+                        </li>
+                        <!-- <li>
+                                <a href="https://www.facebook.com/francisco.j.tembe/" target="_blank">
+                                    <img src="./assets/icons/facebook.svg" alt="ícone facebook">
+                                    <span>perfil no facebook</span>
+                                </a>
+                            </li>-->
+                    </ul>
+                    <p class="where-am-i">
+
+                    </p>
+                </div>
+            </main>
+        </div>
+    </section>
+    <section id="skils">
+        <div class="container">
+            <img class="me" src="./assets/me.png" alt="Francisco Tembe  - front-back & front-end developer ">
+            <main>
+                <div class="upper-content">
+                    <h1 class="heading">
+                        < Soft-Hard <strong>Skills</strong> />
+                    </h1>
+
+                    <p class="bio">
+                        Habilidades técnicas e interpessoais, essenciais para criar soluções digitais inovadoras e
+                        eficazes.
+                    </p>
+                </div>
+                <div class="social-media">
+                    <div class="skills">
+                        <h3>Hard Skills <span>( Habilidades técnicas )</span></h3>
+                        <h4>Tecnologias</h4>
+                        <p>Git, Pwa, Python, Php , Sql, HTML, CSS & javascript </p>
+                        <h4>Frameworks</h4>
+                        <p>Laravel, Django , React Js, Reat Native</p>
+                    </div>
+                    <div class="skills">
+                        <h3>CMS <span>( Sistema de gestão de conteúdo )</span></h3>
+                        <p>WordPress</p>
+                    </div>
+                    <div class="skills">
+                        <h3>Soft Skills <span>( Habilidades interpessoais )</span></h3>
+                        <p>Comunicação, Adaptabilidade, resolução de problemas, trabalho em equipe, aprendizado
+                            contínuo</p>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </section>
+    <section id="blog">
+        <div class="container">
+            <img class="me" src="./assets/me.png" alt="Francisco Tembe  - front-back & front-end developer ">
+            <main>
+                <!-- <div class="upper-content">
+                    <h1 class="heading">
+                        < blog <strong> Informativo</strong> />
+                    </h1>
+                </div> -->
+                <div class="blog">
+
+                    <div>
+                        <a href="#">
+                            <h3>Software as a Service ou Software como Serviço - SaaS</h3>
+                        </a>
+                        <p>Os princípios de programação são diretrizes ou conceitos fundamentais que orientam a
+                            criação de software de qualidade.</p>
+                    </div>
+                    <div>
+                        <a href="#">
+                            <h3>Cache Handler: Aumentando A Eficiência E Desempenho Do Seu Projeto PHP</h3>
+                        </a>
+                        <p>Os princípios de programação são diretrizes ou conceitos fundamentais que orientam a
+                            criação de software de qualidade.</p>
+
+                    </div>
+                    <div>
+                        <a href="#">
+                            <h3>Princípios De Programação</h3>
+                        </a>
+                        <p>Os princípios de programação são diretrizes ou conceitos fundamentais que orientam a
+                            criação de software de qualidade.</p>
+
+                    </div>
+                    <div>
+                        <a href="#">
+                            <h3>Pseudo-classes Do CSS</h3>
+                        </a>
+                        <p>Os princípios de programação são diretrizes ou conceitos fundamentais que orientam a
+                            criação de software de qualidade.</p>
+
+                    </div>
+                </div>
+            </main>
+        </div>
+    </section>
+
+    <script>
+        const dropdown = document.querySelector(".dropdown")
+        function hide() {
+            dropdown.classList.remove('active')
+        }
+        function show() {
+            dropdown.classList.add('active')
+        }
+    </script>
 </body>
+
 </html>
